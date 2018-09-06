@@ -1,6 +1,6 @@
 # raspi
 
-	Clone the repository `git clone httpps://github.com/gsivaych/raspi`
+	Clone the repository `git clone https://github.com/gsivaych/raspi`
 
 ## Raspberry Pi
 
