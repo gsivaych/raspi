@@ -50,9 +50,10 @@ or to delete Home folder as well..
 ```
 $ sudo deluser -remove-home <username>
 ```
+if needed you can end the processes using [kill command](https://en.wikipedia.org/wiki/Kill_(command)).
 ##	Changing auto-login user
-	$ sudo vim /etc/lightdm/lightdm.conf
-	$ change autologin-user = <username>
+	$ sudo vi /etc/lightdm/lightdm.conf
+and make change as `autologin-user = <username>`
 
 ##	Renaming 'pi' user
 Pretty Detailed instructions [here](http://unixetc.co.uk/2016/01/07/how-to-rename-the-default-raspberry-pi-user/).
@@ -70,6 +71,15 @@ static ip_address = 192.168.1.100/24
 static routers = 192.168.1.1 
 static domain_name_servers = 192.168.1.1
 ```
+##	Graphical Desktop Sharing using [VNC](https://www.realvnc.com/)
+	$ sudo apt-get update
+	$ sudo apt-get install realvnc-vnc-server
+	$ vncserver :1
+get the IP addr with
+```
+$ hostname -I
+```
+put in VNC viewer hostname as `IP:1`
 ##	Pi as a wireless access point
 Running a [standalone network](https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md).
 
