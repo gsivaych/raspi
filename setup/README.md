@@ -18,7 +18,7 @@ to /etc/wpa_supplicant/wpa_supplicant.conf
 ##	Boot your pi
 Wait 90 seconds
 
-##	Look out for pi's IP from your router's DCHP client's list
+##	Look out for pi's IP from your router's DHCP client's list
 [Getting IP](https://www.raspberrypi.org/documentation/remote-access/ip-address.md)
 
 ##	SSH into your pi
