@@ -16,10 +16,30 @@ network = {
 to /etc/wpa_supplicant/wpa_supplicant.conf
 
 ##	Boot your pi
-Wait 90 seconds
+Wait for a while..
 
 ##	Look out for pi's IP from your router's DHCP client's list
 [Getting IP](https://www.raspberrypi.org/documentation/remote-access/ip-address.md)
+
+Don't have access, use Static IP instead.
+
+##	Static IP
+Append file `interfaces` located at /etc/network/
+```
+auto eth0
+iface eth0 inet static
+        address <static IP for Ethernet>
+        netmask 255.255.255.0
+        gateway <gateWay>
+
+allow-hotplug wlan0
+iface wlan0 inet static
+        address <static IP for Wireless>
+        netmask 255.255.255.0
+        gateway <gateWay>
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+requires extra reboot.
 
 ##	SSH into your pi
 	$ ssh pi@<IP>
@@ -80,23 +100,6 @@ IP:<displayNumber>
 You can end an instance with
 ```
 $ vncserver -kill :<displayNumber>
-```
-
-##	Static IP
-Append file `interfaces` located at /etc/network/
-```
-auto eth0
-iface eth0 inet static
-        address <static IP for Ethernet>
-        netmask 255.255.255.0
-        gateway <gateWay>
-
-allow-hotplug wlan0
-iface wlan0 inet static
-        address <static IP for Wireless>
-        netmask 255.255.255.0
-        gateway <gateWay>
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 ##	Pi as a wireless access point
